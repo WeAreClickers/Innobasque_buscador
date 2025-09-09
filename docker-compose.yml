@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16   # Imagen de Postgres 16 con pgvector
+    container_name: pgvector_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}       # Usuario configurado en .env
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # Contraseña configurada en .env
+      POSTGRES_DB: ${POSTGRES_DB}           # Base de datos inicial
+      TZ: ${TZ}                             # Zona horaria
+    ports:
+      - "${HOST_BIND}:5432:5432"            # expone el puerto 5432 al host
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data   # datos persistentes
+      - ./init:/docker-entrypoint-initdb.d  # scripts iniciales (ejecutados solo una vez)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
