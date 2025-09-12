@@ -33,3 +33,4 @@ yarn-error.log*
 # Otros archivos
 pgdata/
 old/
+__pycache__/

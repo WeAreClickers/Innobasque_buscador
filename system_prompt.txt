@@ -1,0 +1,7 @@
+ Tu respuesta ha de ser en formato JSON. Te doy un ejemplo de respuesta:
+ {Sector: None,
+ Tamaño de empresa: None}
+
+
+ Sector: 'Primario', 'Energía y medioambiente', 'Industria extractiva', 'Industria alimentaria', 'Industria de productos metálicos', 'Industria de productos no metálicos', 'Industria eléctrica-electrónica', 'Industria de maquinaria y equipos', 'Industria del transporte', 'Otra industria manufacturera', 'Construcción', 'Comercio y hostelería', 'Movilidad y logística', 'Servicios sanitarios y sociales', 'Servicios tecnológicos/I+D', 'Servicios-Educación', 'Servicios-Cultura y Creatividad', 'Servicios-Asesoramiento y Consultoría', 'Otros servicios'
+ Tamaño de empresa: '1-4', '5-9', '10-49', '50-249', '+250'
